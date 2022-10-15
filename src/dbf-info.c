@@ -1,3 +1,7 @@
+// dbf-tools: dbf-info.c
+// Copyright (c) 2022 José Miguel (Josemi) Rodríguez M.
+// https://github.com/josemirm/dbf-tools
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -46,7 +50,7 @@ void printSQLType(P_DBF *f, int col) {
 
 void printColumnsSQL(P_DBF *f) {
 	int cols = dbf_NumCols(f);
-	
+
 	if (cols < 1) return;
 
 	puts("CREATE TABLE IF NOT EXISTS \"Table1\"(");
@@ -104,9 +108,9 @@ void leerColumnas(P_DBF *f) {
 
 void printBasicInfo(P_DBF *f, char const *fname) {
 	printf("Fichero: %s\n", fname);
-	printf("- Tipo de base de datos: %s\n", dbf_GetStringVersion(f));
-	printf("- Número de filas: %i\n", dbf_NumRows(f));
-	printf("- Número de columnas: %i\n", dbf_NumCols(f));
+	printf("Tipo de base de datos: %s\n", dbf_GetStringVersion(f));
+	printf("Número de filas: %i\n", dbf_NumRows(f));
+	printf("Número de columnas: %i\n", dbf_NumCols(f));
 }
 
 
@@ -184,7 +188,7 @@ int main(int argc, char const *argv[])
 		puts("--col: Imprime información de las columnas en formato CSV\n");
 		puts("--csv: Imprime sólo la información de las columnas en formato CSV\n");
 		puts("--sql: Imprime en formato SQL el esquema que tiene la tabla");
-		
+
 		printf("\nEjemplo: %s --csv file.dbf\n", argv[0]);
 
 		exit(EXIT_FAILURE);

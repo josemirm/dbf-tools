@@ -1,3 +1,7 @@
+// dbf-tools: dbf-csv.c
+// Copyright (c) 2022 José Miguel (Josemi) Rodríguez M.
+// https://github.com/josemirm/dbf-tools
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "dbf-csv.h"
@@ -384,7 +388,7 @@ int main(int argc, char const *argv[]) {
 	// Abre el fichero de salida
 	FILE* salida = fopen(argv[2], "wt");
 
-	fprintf(stderr, "Fichero de salida '%s' abierto.\n", argv[2]);
+	fprintf(stderr, "\nFichero de salida '%s' abierto.\n", argv[2]);
 
 	FmtColumn fcol = obtenerColumnas(entrada);
 	if (fcol.columnas < 1) {
@@ -394,9 +398,9 @@ int main(int argc, char const *argv[]) {
 	}
 
 	fprintf(stderr,
-		"Se van a escribir %i filas de datos, cada una de ellas con %i columnas.\n",
+		"\nSe van a escribir %i filas de datos, cada una de ellas con %i columnas.\n",
 		dbf_NumRows(entrada), fcol.columnas);
-	fprintf(stderr, "Escribiendo...\n\n");
+	fprintf(stderr, "\nEscribiendo...\n");
 
 	// imprimirColumnasTMP(&fcol);
 

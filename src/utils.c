@@ -1,9 +1,13 @@
+// dbf-tools: utils.c
+// Copyright (c) 2022 José Miguel (Josemi) Rodríguez M.
+// https://github.com/josemirm/dbf-tools
+
 #include "utils.h"
 
 
 char* skipStartWhitespaces(char *str, int* len) {
 	if (*len <= 0) return str;
-	
+
 	int pos = 0;
 	int oldLen = *len;
 

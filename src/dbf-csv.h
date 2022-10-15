@@ -1,3 +1,7 @@
+// dbf-tools: dbf-csv.h
+// Copyright (c) 2022 José Miguel (Josemi) Rodríguez M.
+// https://github.com/josemirm/dbf-tools
+
 #ifndef __DBF_CSV_H__
 #define __DBF_CSV_H__
 
