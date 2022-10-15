@@ -1,0 +1,3 @@
+[submodule "libdbf"]
+	path = libdbf
+	url = https://github.com/quentindemetz/libdbf
