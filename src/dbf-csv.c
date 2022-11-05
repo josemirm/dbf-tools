@@ -375,7 +375,7 @@ int main(int argc, char const *argv[]) {
 	printLicense();
 
 
-	if (argc < 3) {
+	if (argc != 3) {
 		fprintf(stderr, "%s: Se necesita un archivo que procesar\n", argv[0]);
 		fprintf(stderr, "Uso: %s <archivo de entrada> <archivo CSV de salida>\n", argv[0]);
 		exit(EXIT_FAILURE);
@@ -387,6 +387,12 @@ int main(int argc, char const *argv[]) {
 
 	// Abre el fichero de salida
 	FILE* salida = fopen(argv[2], "wt");
+
+	if (salida == NULL) {
+		perror("\nError al abrir el fichero de salida");
+		dbf_Close(entrada);
+		exit(1);
+	}
 
 	fprintf(stderr, "\nFichero de salida '%s' abierto.\n", argv[2]);
 
