@@ -2,6 +2,7 @@
 # Copyright (c) 2022 José Miguel (Josemi) Rodríguez M.
 # https://github.com/josemirm/dbf-tools
 
+# Clone the repository of libdbf library using Git
 cmake_minimum_required(VERSION 3.4)
 
 project(
@@ -14,6 +15,10 @@ project(
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED TRUE)
 set(CMAKE_BUILD_TYPE Debug)
+
+# Clone the repository of libdbf
+include(AddGitSubmodule.cmake)
+add_git_submodule("libdbf")
 
 # Configure libdbf library. This is only valid for Unix-like systems
 execute_process(COMMAND /bin/bash "./autogen.sh"
