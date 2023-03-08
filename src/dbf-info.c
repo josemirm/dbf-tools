@@ -16,6 +16,7 @@ void printSQLType(P_DBF *f, int col) {
 
 	switch (type) {
 		case 'N':
+		{
 			int decs = dbf_ColumnDecimals(f, col);
 
 			if (decs > 0) {
@@ -25,6 +26,7 @@ void printSQLType(P_DBF *f, int col) {
 			}
 
 			break;
+		}
 
 		case 'C':
 			printf("VARCHAR(%i)", dbf_ColumnSize(f, col));
@@ -43,7 +45,8 @@ void printSQLType(P_DBF *f, int col) {
 			break;
 
 		default:
-		// Prints nothing
+		;	// Prints nothing. That semicolon is to avoid Clang to
+			// throw a warning :-)
 	}
 }
 
